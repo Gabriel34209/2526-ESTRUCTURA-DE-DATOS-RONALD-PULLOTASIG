@@ -1,0 +1,48 @@
+/// <summary>
+/// La clase Circulo representa una figura geométrica bidimensional.
+/// Encapsula el radio y proporciona métodos para calcular el área y el perímetro (circunferencia).
+/// </summary>
+public class Circulo
+{
+    // El radio se declara como un tipo de dato primitivo 'double' y es privado.
+    // Esto asegura la encapsulación del dato.
+    private double radio;
+
+    // Constructor de la clase Circulo.
+    // Inicializa el objeto Circulo con el valor del radio proporcionado.
+    public Circulo(double radioInicial)
+    {
+        // Asignación del valor inicial al campo privado 'radio'.
+        this.radio = radioInicial;
+    }
+
+    // Propiedad (Getter) para acceder al radio de forma controlada.
+    // Permite leer el valor del radio desde fuera de la clase.
+    public double Radio
+    {
+        get { return radio; }
+        // Se omite el 'set' para hacer el radio de solo lectura después de la creación
+        // (podría incluirse si se necesitara modificarlo).
+    }
+
+    /// <summary>
+    /// CalcularArea es una función que devuelve un valor double, se utiliza para calcular
+    /// el área de un círculo usando la fórmula A = π * r².
+    /// </summary>
+    /// <returns>El área del círculo.</returns>
+    public double CalcularArea()
+    {
+        // Math.PI es una constante predefinida en C# para el valor de Pi (3.14159...).
+        return Math.PI * radio * radio;
+    }
+
+    /// <summary>
+    /// CalcularPerimetro es una función que devuelve un valor double, se utiliza para
+    /// calcular el perímetro (circunferencia) de un círculo usando la fórmula C = 2 * π * r.
+    /// </summary>
+    /// <returns>El perímetro del círculo.</returns>
+    public double CalcularPerimetro()
+    {
+        return 2 * Math.PI * radio;
+    }
+}
